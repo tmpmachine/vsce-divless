@@ -52,8 +52,18 @@ function activate(context) {
 	
 		if (fs.existsSync(divlessFilePath)) {
 			const divlessFileUri = vscode.Uri.file(divlessFilePath);
-			const document = await vscode.workspace.openTextDocument(divlessFileUri);
-			await vscode.window.showTextDocument(document, { viewColumn: vscode.ViewColumn.Active, preserveFocus: true });
+			// const document = await vscode.workspace.openTextDocument(divlessFileUri);
+			// await vscode.window.showTextDocument(document, { viewColumn: vscode.ViewColumn.Active, preserveFocus: true });
+
+			// const filePath = divlessFileUri; // Replace with the desired file path
+
+			const openFileAction = 'Open divless File';
+			vscode.window.showInformationMessage('A divless version of this file is exists. Avoid making changes to this file.', openFileAction)
+			.then(selection => {
+				if (selection === openFileAction) {
+					vscode.commands.executeCommand('vscode.open', divlessFileUri);
+				}
+			});
 		}
 	});
 
