@@ -1,7 +1,7 @@
 {
   "name": "divlesshtml",
   "displayName": "Divless HTML",
-  "description": "",
+  "description": "One way converter for divless HTML format to regular HTML format.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.78.0"
@@ -10,7 +10,10 @@
     "Other"
   ],
   "activationEvents": [
-    "onLanguage:html"
+    "onLanguage:html",
+    "onLanguage:razor",
+    "onLanguage:vue-html",
+    "onLanguage:xml"
   ],
   "main": "./extension.js",
   "contributes": {
