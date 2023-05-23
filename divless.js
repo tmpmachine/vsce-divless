@@ -1,6 +1,8 @@
 exports.myFunction = (function () {
   
-  return divless = (function () {
+  // divless v1.0.1
+  
+  return (function () {
   
     let SELF = {
       tag: [], 
@@ -89,6 +91,7 @@ exports.myFunction = (function () {
       'jt:': 'justify-content:',
       'ali:': 'align-items:',
       'als:': 'align-self:',
+      'flexdir:': 'flex-direction:',
     };
     
     const skips = [
@@ -106,6 +109,7 @@ exports.myFunction = (function () {
         {open: '"', close: '"', name: 'innerHTML'},
         {open: "'", close: "'", name: 'innerHTML'},
         {open: '@', close: ' ', name: 'id'},
+        {open: '#', close: ' ', name: 'id'},
       ],
     };
     
@@ -349,6 +353,7 @@ exports.myFunction = (function () {
                 
                 switch (attribute.open) {
                   case '@':
+                  case '#':
                     scanType = 'id';
                   break;
                   case '"':
