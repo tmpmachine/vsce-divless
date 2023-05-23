@@ -3,6 +3,7 @@
   "displayName": "Divless HTML",
   "description": "One way converter for divless HTML format to regular HTML format.",
   "version": "0.0.1",
+  "publisher": "pacolemon",
   "engines": {
     "vscode": "^1.78.0"
   },
@@ -39,5 +40,9 @@
     "mocha": "^10.2.0",
     "typescript": "^5.0.4",
     "@vscode/test-electron": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmpmachine/vsce-divless.git"
   }
 }
