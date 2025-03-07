@@ -1,6 +1,6 @@
 {
-  "name": "divlesshtml",
-  "displayName": "Divless HTML",
+  "name": "divlesshtmlwatcher",
+  "displayName": "Divless HTML Watcher",
   "description": "One way converter for divless HTML format to regular HTML format.",
   "version": "0.0.2",
   "publisher": "vanillawebdev",
