@@ -3,7 +3,7 @@
   "displayName": "Divless HTML",
   "description": "One way converter for divless HTML format to regular HTML format.",
   "version": "0.0.2",
-  "publisher": "tmpcafe",
+  "publisher": "vanillawebdev",
   "engines": {
     "vscode": "^1.78.0"
   },
