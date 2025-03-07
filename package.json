@@ -1,48 +1,53 @@
 {
-  "name": "divlesshtmlwatcher",
-  "displayName": "Divless HTML Watcher",
-  "description": "One way converter for divless HTML format to regular HTML format.",
-  "version": "0.0.2",
-  "publisher": "vanillawebdev",
-  "engines": {
-    "vscode": "^1.78.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onLanguage:html",
-    "onLanguage:razor",
-    "onLanguage:vue-html",
-    "onLanguage:xml"
-  ],
-  "main": "./extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "divlesshtml.createDivlessHTMLFile",
-        "title": "Divless: Create divless HTML file"
-      }
-    ]
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "node ./test/runTest.js"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.78.0",
-    "@types/glob": "^8.1.0",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "16.x",
-    "eslint": "^8.39.0",
-    "glob": "^8.1.0",
-    "mocha": "^10.2.0",
-    "typescript": "^5.0.4",
-    "@vscode/test-electron": "^2.3.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tmpmachine/vsce-divless.git"
-  }
+	"name": "divlesshtmlwatcher",
+	"displayName": "Divless HTML Watcher",
+	"description": "One way converter for divless HTML format to regular HTML format.",
+	"version": "0.0.3",
+	"publisher": "vanillawebdev",
+	"engines": {
+		"vscode": "^1.78.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:html",
+		"onLanguage:razor",
+		"onLanguage:vue-html",
+		"onLanguage:xml"
+	],
+	"main": "./extension.js",
+	"browser": "./dist/web/extension.js",
+	"extensionKind": [
+		"workspace"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "divlesshtml.createDivlessHTMLFile",
+				"title": "Divless: Create divless HTML file"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js",
+    "open-in-browser": "vscode-test-web --extensionDevelopmentPath=. ."
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.78.0",
+		"@types/glob": "^8.1.0",
+		"@types/mocha": "^10.0.1",
+		"eslint": "^8.39.0",
+		"glob": "^8.1.0",
+		"mocha": "^10.2.0",
+		"typescript": "^5.0.4",
+		"@vscode/test-electron": "^2.3.0",
+		"@vscode/test-web": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tmpmachine/vsce-divless.git"
+	}
 }
