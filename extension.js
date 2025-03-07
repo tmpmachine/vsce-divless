@@ -52,7 +52,7 @@ function activate(context) {
 			const divlessDirUri = vscode.Uri.joinPath(currentFileDir, '.divless');
 			const divlessFileUri = vscode.Uri.joinPath(
 				divlessDirUri,
-				currentFileName.replace(`.${currentExt}`, `.divless.${currentExt}`)
+				currentFileName
 			);
 
 			if (!(await fileExists(divlessDirUri))) {
@@ -82,7 +82,7 @@ function activate(context) {
 			const divlessFileUri = vscode.Uri.joinPath(
 				currentFileDir,
 				'.divless',
-				currentFileName.replace(`.${currentExt}`, `.divless.${currentExt}`)
+				currentFileName
 			);
 
 			if (await fileExists(divlessFileUri)) {
@@ -104,9 +104,6 @@ function activate(context) {
 	const saveListener = vscode.workspace.onDidSaveTextDocument(async (event) => {
 		try {
 			const currentExt = getFileExtension(event.uri);
-			if (!event.fileName.includes(`.divless.${currentExt}`)) {
-				return;
-			}
 
 			const editor = vscode.window.activeTextEditor;
 			if (!editor) {
@@ -120,10 +117,7 @@ function activate(context) {
 			const parentDirUri = vscode.Uri.joinPath(currentFileDir, '..');
 			const currentFileName = getFileName(currentFileUri);
 
-			const finalUri = vscode.Uri.joinPath(
-				parentDirUri,
-				currentFileName.replace(`.divless.${currentExt}`, `.${currentExt}`)
-			);
+			const finalUri = vscode.Uri.joinPath(parentDirUri, currentFileName);
 			const content = event.getText();
 			await writeFile(finalUri, divless.myFunction.replace(content));
 		} catch (e) {
