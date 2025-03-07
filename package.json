@@ -2,8 +2,8 @@
   "name": "divlesshtml",
   "displayName": "Divless HTML",
   "description": "One way converter for divless HTML format to regular HTML format.",
-  "version": "0.0.1",
-  "publisher": "pacolemon",
+  "version": "0.0.2",
+  "publisher": "tmpcafe",
   "engines": {
     "vscode": "^1.78.0"
   },
